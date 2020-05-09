@@ -9,44 +9,21 @@ import java.lang.reflect.Array;
 public class CaesarCipher implements Observer {
 
 	String alphabet = "abcdefghijklmnopqrstuvwxyz";
-	String number = "0123456789";
 	String result;
 	public void setText(String text){
-		String demo_text = "";
-		for(int i = 0; i<text.length(); i++) {
-			char c = (char) (text.charAt(i));
-			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64)) {
-				if (c == '!') {
-					demo_text += (char) (text.charAt(i));
-				} else if (c == ' ') {
-					demo_text += " ";
-				}
-				else {
-					int index = alphabet.indexOf(Character.toLowerCase(c));
-					if (Character.toUpperCase(c) == c) {
-						demo_text += Character.toUpperCase(alphabet.charAt(25 - index));
-					} else
-						demo_text += (alphabet.charAt(25 - index));
-				}
-				result = demo_text;
-			}
-			else{
-				result = "";
-			}
-		}
+		caesarCipher(text);
 	}
 
-	public String caesarCipher(String text){
+	public String caesarCipher(String text) {
 		String demo_text = "";
-		for(int i = 0; i<text.length(); i++) {
+		for (int i = 0; i < text.length(); i++) {
 			char c = (char) (text.charAt(i));
-			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64)) {
-				if (c == '!') {
-					demo_text += (char) (text.charAt(i));
+			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64) || (int) c == 33 || (int) c == 44 || (int) c == 46 || (int) c == 63 || (int) c == 32) {
+				if (alphabet.indexOf(Character.toLowerCase(c)) == -1) {
+						demo_text += (char) (text.charAt(i));
 				} else if (c == ' ') {
 					demo_text += " ";
-				}
-				else {
+				} else {
 					int index = alphabet.indexOf(Character.toLowerCase(c));
 					if (Character.toUpperCase(c) == c) {
 						demo_text += Character.toUpperCase(alphabet.charAt(25 - index));
@@ -54,8 +31,7 @@ public class CaesarCipher implements Observer {
 						demo_text += (alphabet.charAt(25 - index));
 				}
 				result = demo_text;
-			}
-			else{
+			} else {
 				result = "";
 			}
 		}
