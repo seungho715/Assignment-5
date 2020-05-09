@@ -93,4 +93,9 @@ public class CipherTests {
         assertEquals("", c.caesarCipher(""));
     }
 
+    @Test
+    public void CaesarNumber(){
+        CaesarCipher c = new CaesarCipher();
+        assertEquals("", c.caesarCipher("123"));
+    }
 }
