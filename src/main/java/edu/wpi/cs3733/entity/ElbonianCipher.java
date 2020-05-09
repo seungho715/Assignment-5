@@ -8,7 +8,14 @@ public class ElbonianCipher implements Observer {
 	String result;
 
 	public void setText(String text){
+		elbonainCipher(text);
+	}
+
+	public String elbonainCipher(String text){
 		String init = text.toLowerCase();
+		if(init.length() > 140){
+			init = init.substring(0, 140);
+		}
 		String demo_text = "";
 		String alphabet = "_abcdefghijklmnopqrstuvwxyz";
 		String num = "_123456789";
@@ -22,7 +29,7 @@ public class ElbonianCipher implements Observer {
 			else if(init.charAt(i) == '!')
 				demo_text += "!";
 			else {
-				if (Integer.parseInt(Integer.toString(alphabet.indexOf(init.charAt(i)) )) < 10) {
+				if (Integer.parseInt(Integer.toString(alphabet.indexOf(init.charAt(i)) )) < 10 && Integer.parseInt(Integer.toString(alphabet.indexOf(init.charAt(i)) )) > 0) {
 					demo_text = demo_text + "0" + Integer.toString(alphabet.indexOf(init.charAt(i)));
 				}
 				else {
@@ -31,6 +38,7 @@ public class ElbonianCipher implements Observer {
 			}
 		}
 		result = demo_text;
+		return result;
 	}
 
 	public String getText(){

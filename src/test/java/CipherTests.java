@@ -44,41 +44,53 @@ public class CipherTests {
         CaesarCipher c = new CaesarCipher();
         assertEquals("z y x !", c.caesarCipher("a b c !"));
     }
-    /*
+
     @Test
     public void ElbonianLowercase(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("010203", e.setText("abc"));
+        assertEquals("010203", e.elbonainCipher("abc"));
     }
     @Test
     public void ElbonianMixed(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("012703", e.setText("aBc"));
+        assertEquals("010203", e.elbonainCipher("aBc"));
     }
     @Test
     public void ElbonianUppercase(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("272829", e.setText("ABC"));
+        assertEquals("010203", e.elbonainCipher("ABC"));
     }
     @Test
     public void ElbonianWithSpace(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("272829S", e.setText("ABC "));
+        assertEquals("010203S", e.elbonainCipher("ABC "));
     }
     @Test
     public void ElbonianWithUnderscore(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("0272829S", e.setText("_ABC "));
+        assertEquals("0010203S", e.elbonainCipher("_ABC "));
     }
     @Test
     public void ElbonainWithPunc(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("0272829S!", e.setText("_ABC !"));
+        assertEquals("0010203S!", e.elbonainCipher("_ABC !"));
     }
     @Test
     public void ElbonianOver140Char(){
         ElbonianCipher e = new ElbonianCipher();
-        assertEquals("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", e.setText("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
+        assertEquals("0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101", e.elbonainCipher("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
     }
-     */
+
+    @Test
+    public void ElbonianEmpty(){
+        ElbonianCipher e = new ElbonianCipher();
+        assertEquals("", e.elbonainCipher(""));
+    }
+
+    @Test
+    public void CaesarEmpty(){
+        CaesarCipher c = new CaesarCipher();
+        assertEquals("", c.caesarCipher(""));
+    }
+
 }
