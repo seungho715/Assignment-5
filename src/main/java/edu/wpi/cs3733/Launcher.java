@@ -20,7 +20,7 @@ public class Launcher extends Application {
 	public void start(Stage primaryStage){
 		Parent root;
 		try {
-			// root = FXMLLoader.load(new File("src/main/resources/MainView.fxml").toURL());
+			//root = FXMLLoader.load(new File("src/main/resources/MainView.fxml").toURL());
 			root = FXMLLoader.load(new File("src/main/resources/MainView.fxml").toURI().toURL());
 		} catch (IOException e){
 			System.err.println("Failed to load main FXML file!");

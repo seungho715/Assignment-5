@@ -36,6 +36,32 @@ public class CaesarCipher implements Observer {
 		}
 	}
 
+	public String caesarCipher(String text){
+		String demo_text = "";
+		for(int i = 0; i<text.length(); i++) {
+			char c = (char) (text.charAt(i));
+			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64)) {
+				if (c == '!') {
+					demo_text += (char) (text.charAt(i));
+				} else if (c == ' ') {
+					demo_text += " ";
+				}
+				else {
+					int index = alphabet.indexOf(Character.toLowerCase(c));
+					if (Character.toUpperCase(c) == c) {
+						demo_text += Character.toUpperCase(alphabet.charAt(25 - index));
+					} else
+						demo_text += (alphabet.charAt(25 - index));
+				}
+				result = demo_text;
+			}
+			else{
+				result = "";
+			}
+		}
+		return result;
+	}
+
 	public String getText(){
 		return result;
 	}
