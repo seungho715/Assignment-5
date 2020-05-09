@@ -38,6 +38,10 @@ public class ElbonianCipher implements Observer {
 			}
 		}
 		result = demo_text;
+		if(result.contains("-"))
+		{
+			return "";
+		}
 		return result;
 	}
 

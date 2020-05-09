@@ -21,7 +21,7 @@ public class CaesarCipher implements Observer {
 		}
 		for (int i = 0; i < text.length(); i++) {
 			char c = (char) (text.charAt(i));
-			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64) || (int) c == 33 || (int) c == 44 || (int) c == 46 || (int) c == 63 || (int) c == 32) {
+			if (((int) c < 123 && (int) c > 96) || ((int) c < 91 && (int) c > 64) || ((int) c == 33) || ((int) c == 44) || ((int) c == 46) || ((int) c == 63) || ((int) c == 32)) {
 				if (alphabet.indexOf(Character.toLowerCase(c)) == -1) {
 						demo_text += (char) (text.charAt(i));
 				} else if (c == ' ') {
@@ -35,7 +35,7 @@ public class CaesarCipher implements Observer {
 				}
 				result = demo_text;
 			} else {
-				result = "";
+				return result = "";
 			}
 		}
 		return result;

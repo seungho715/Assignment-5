@@ -98,4 +98,16 @@ public class CipherTests {
         CaesarCipher c = new CaesarCipher();
         assertEquals("", c.caesarCipher("123"));
     }
+
+    @Test
+    public void CaesarInvalid(){
+        CaesarCipher c = new CaesarCipher();
+        assertEquals("", c.caesarCipher("Ex@mple"));
+    }
+
+    @Test
+    public void ElbonianInvalid(){
+        ElbonianCipher e = new ElbonianCipher();
+        assertEquals("", e.elbonainCipher("Ex+mple@N&CK"));
+    }
 }
